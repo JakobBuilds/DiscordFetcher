@@ -53,6 +53,7 @@ def collect_messages(channel_id, message_limit):
 
     with open(file_path, mode='r', encoding='utf-8') as file:
         token = file.read()
+        token = token.rstrip()
     access__token = {'authorization': token}
 
     r = requests.get(url, headers=access__token)
