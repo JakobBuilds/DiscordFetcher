@@ -65,6 +65,7 @@ def collect_messages(channel_id, message_limit):
         url_before = f"https://discord.com/api/v9/channels/{channel_id}/messages?limit=100&before={aelteste_message_id}"
         with open('data/auth.txt', mode='r', encoding='utf-8') as file:
             token = file.read()
+            token = token.rstrip()
         access__token = {'authorization': token}
         req = requests.get(url_before, headers=access__token)
         req.raise_for_status()
