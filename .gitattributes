@@ -1,0 +1,2 @@
+# Stelle sicher, dass Bash-Skripte immer LF behalten
+*.sh text eol=lf

@@ -1,0 +1,31 @@
+This script is meant to make the passive use of Discord (as a Reader of News etc) more convenient.
+Starting this script will use your Login to read Discord Threads and produce a PDF for each.
+
+How to find the Authentication Token:
+Log into Discord in Google Chrome
+Press F12 for developer view
+Press record button
+Open a thread in Discord, which triggers a request
+Find the request with "messages?limit=50"
+For this request look at the Headers tab and search for Authorization und copy the token
+
+How to find the Thread id:
+Discord - Settings - Advanced - Developer view activate
+Right click on the thread - copy the id
+Alternatively it can be found in the URL of the thread
+
+How to configure this app:
+Go to the data folder
+put the authentication token in auth.txt (only the token, no '' and nothing else)
+
+in config.csv, you can put the threads of interest with their respective settings in each line:
+channel_name:
+will be the name of the file and folder to be created
+channel_id:
+determines the channel to be visited
+message_limit:
+limits the maximum number of messages to be displayed in the pdf
+continue_only_01:
+can be 0 or 1 and determines whether the maximum number of messages will be displayed
+or whether the app will continue from the last message of the previously ceated document
+
