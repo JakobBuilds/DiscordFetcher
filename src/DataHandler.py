@@ -95,10 +95,12 @@ def verarbeite_messages(printer_buffer, messages, download_path, continue_from_m
             attachment_files = []
             imgs_runtime = []
             for att in m.get("attachments", []):
-
+                MAX_FILENAME_LENGTH = 100
                 url = att["url"]  # direct CDN URL
-                filename = att["filename"]      # get the attribute with title "filename" -> get original filename
+                filename = att["filename"]  # get the attribute with title "filename" -> get original filename
                 filename = str(message_id) + " - " + filename
+                filename = filename[:MAX_FILENAME_LENGTH]
+
                 filepath = os.path.join(download_path, filename)
 
                 # download the file
